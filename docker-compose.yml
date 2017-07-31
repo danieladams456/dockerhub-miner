@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+  miner:
+    image: danieladams456/miner
+    ports:
+      - "8080:8080"
+    deploy:
+      replicas: 1
+      restart_policy:
+        max_attempts: 3
+        window: 3m
+    secrets:
+      - test_cert
+
+secrets:
+  test_cert:
+    external: true
