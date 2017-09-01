@@ -7,6 +7,10 @@ It exposes the stunnel proxy listener as port 8080.
 ```
 client = yes
 cert = /home/$USER/.stunnel/stunnel.pem
+pid = /home/$USER/.stunnel/pid
+
+output = /home/$USER/.stunnel/log
+debug=err
 
 ;performance optimization to match server side
 socket = r:TCP_NODELAY=1
